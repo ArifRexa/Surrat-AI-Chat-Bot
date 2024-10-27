@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Successful</title>
+  <!-- Add Bootstrap CSS link here -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Custom CSS for centering the page content */
+    body, html {
+      height: 100%;
+      margin: 0;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+    .alert-success {
+      font-size: 24px;
+      font-weight: bold;
+      padding: 20px;
+      background-color: #dff0d8;
+      border: 1px solid #b2dba1;
+      border-radius: 5px;
+      text-align: center; /* Center the text horizontally */
+    }
+  </style>
+</head>
+<body>
+    <!--This template show whenever doesn't login via social OAuth or google-OAuth-->
+    {% if user.is_authenticated and user.socialaccount_set.all %}
+    <div class="container">
+        <div class="alert alert-success" role="alert">
+        Login Successful! {{ user.first_name }} {{ user.last_name }}
+            <p>You are logged in Via OAuth.</p>
+        </div>
+        <div class="text-center">
+        <a href="{% url 'account_logout' %}" class="btn btn-primary">Logout</a>
+        </div>
+    </div>
+    <!--This template show whenever doesn't login via social OAuth or google-OAuth-->
+    {% elif user.is_authenticated %}
+    <div class="container">
+        <div class="alert alert-success" role="alert">
+        Login Successful! {{ user.first_name }} {{ user.last_name }}
+        <p>You logged in via normal authentication</p>
+        </div>
+        <div class="text-center">
+        <a href="{% url 'log-out' %}" class="btn btn-primary">Logout</a>
+        </div>
+    </div>
+    {% else %}
+    
+    <!--This shows up if a user isn't loooged in via any platform-->
+    <div class="container">
+        <div class="alert alert-danger" role="alert">
+            <strong>You aren't logged in</strong>  
+        </div>    
+    </div>
+    {% endif %}
+  <!-- Add Bootstrap JS and jQuery script links here -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

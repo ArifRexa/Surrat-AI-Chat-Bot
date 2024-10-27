@@ -1,0 +1,124 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+#IDE
+.idea/
+.idea
+.vscode
+.vscode/
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Pytest
+.cache/
+
+# Django
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+static/
+local_settings.py
+.env
+.env/
+
+# Django Migrations
+*/migrations/
+!**/migrations/__init__.py
+
+# VS Code
+.vscode/
+.history/
+
+# pyenv
+.python-version
+
+# virtualenv
+.venv/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environments
+.venv
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Docker
+!**/Dockerfile
+!**/docker-compose.yml
+**/docker-compose.override.yml
+.dockerignore
+docker-compose.prod.yml
+docker-compose.dev.yml
+!docker-compose.yml
+.docker/
+docker-compose.override.yml
+
+# Coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre
+.pyre/
+
+# SQL and database
+*.sql
+
+# Testing
+.coverage.*
+.cache
+nosetests.xml
+*.py,cover
